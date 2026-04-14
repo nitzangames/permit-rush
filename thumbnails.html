@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Permit Rush — Thumbnail Options</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #05070f;
+      color: #e0f0ff;
+      font-family: ui-monospace, Menlo, monospace;
+    }
+    h1 {
+      text-align: center;
+      margin: 24px 0 8px;
+      font-size: 24px;
+      color: #3fd4ff;
+    }
+    p.sub {
+      text-align: center;
+      color: #6080a0;
+      font-size: 14px;
+      margin: 0 0 28px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      padding: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #0a0e1f;
+      border: 2px solid #1a2040;
+      padding: 16px;
+      text-align: center;
+    }
+    .card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      border: 1px solid #2a4070;
+    }
+    .card .label {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #3fd4ff;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .card .id {
+      margin-top: 4px;
+      font-size: 12px;
+      color: #6080a0;
+    }
+    .scaled-row {
+      display: grid;
+      grid-template-columns: repeat(4, 200px);
+      gap: 20px;
+      justify-content: center;
+      padding: 12px 24px 36px;
+    }
+    .scaled-row figure {
+      margin: 0;
+      text-align: center;
+    }
+    .scaled-row img {
+      display: block;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #2a4070;
+    }
+    .scaled-row figcaption {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #6080a0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Permit Rush — Thumbnail Options</h1>
+  <p class="sub">Full 1024×1024 below · home-grid preview (≈200px) at the top</p>
+
+  <div class="scaled-row">
+    <figure><img src="/tools/screenshots/thumb_stamp-hero.png"><figcaption>1 · stamp-hero</figcaption></figure>
+    <figure><img src="/tools/screenshots/thumb_split.png"><figcaption>2 · split</figcaption></figure>
+    <figure><img src="/tools/screenshots/thumb_blueprint-card.png"><figcaption>3 · blueprint-card</figcaption></figure>
+    <figure><img src="/tools/screenshots/thumb_alert.png"><figcaption>4 · alert</figcaption></figure>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <img src="/tools/screenshots/thumb_stamp-hero.png" alt="stamp-hero">
+      <div class="label">Option 1 — Stamp Hero</div>
+      <div class="id">thumb_stamp-hero.png</div>
+    </div>
+    <div class="card">
+      <img src="/tools/screenshots/thumb_split.png" alt="split">
+      <div class="label">Option 2 — Split Approve/Reject</div>
+      <div class="id">thumb_split.png</div>
+    </div>
+    <div class="card">
+      <img src="/tools/screenshots/thumb_blueprint-card.png" alt="blueprint-card">
+      <div class="label">Option 3 — Blueprint Card</div>
+      <div class="id">thumb_blueprint-card.png</div>
+    </div>
+    <div class="card">
+      <img src="/tools/screenshots/thumb_alert.png" alt="alert">
+      <div class="label">Option 4 — Red Alert</div>
+      <div class="id">thumb_alert.png</div>
+    </div>
+  </div>
+</body>
+</html>

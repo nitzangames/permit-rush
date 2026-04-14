@@ -1,0 +1,7 @@
+node_modules/
+dist/
+tools/screenshots/
+.DS_Store
+*.log
+.env
+.env.local

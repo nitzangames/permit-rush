@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover" />
+    <meta name="theme-color" content="#0d1021" />
+    <title>Permit Rush</title>
+    <style>
+      :root { color-scheme: dark; }
+      html, body {
+        margin: 0; padding: 0;
+        width: 100%; height: 100%;
+        background: #05070f;
+        overflow: hidden;
+        overscroll-behavior: none;
+        touch-action: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+      #wrap {
+        position: fixed; inset: 0;
+        display: flex; align-items: center; justify-content: center;
+      }
+      #game {
+        display: block;
+        image-rendering: auto;
+        background: #0d1021;
+        box-shadow: 0 0 40px rgba(63, 212, 255, 0.08);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap"><canvas id="game"></canvas></div>
+    <script src="./play-sdk.js"></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

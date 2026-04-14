@@ -40,7 +40,7 @@ export function createBaseBlueprint(wave, cardIndex) {
     lotSize,
     footprint: Math.floor(lotSize * footprintPct),
     setback: 7 + Math.floor(rng() * 14),
-    foundation: pick(['slab','crawl','pier']),
+    foundation: pick(['slab','crawl','pier','basement']),
     solarPanels: rng() < 0.3,
     treeRemoval: rng() < 0.25,
     violations: [],

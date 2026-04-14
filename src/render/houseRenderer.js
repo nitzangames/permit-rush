@@ -115,14 +115,32 @@ export function drawHouseIllustration(ctx, bp, x, y, w, h) {
   }
 
   if (bp.foundation === 'basement') {
-    ctx.strokeStyle = 'rgba(63, 212, 255, 0.55)';
-    ctx.setLineDash([5, 4]);
-    ctx.strokeRect(houseX, groundY, houseW, 28);
+    const bh = floorH;
+    // Subterranean tint
+    ctx.fillStyle = 'rgba(63, 212, 255, 0.12)';
+    ctx.fillRect(houseX, groundY, houseW, bh);
+    // Outline (dashed to read as "below ground")
+    ctx.strokeStyle = COLORS.houseLine;
+    ctx.lineWidth = 2;
+    ctx.setLineDash([6, 5]);
+    ctx.strokeRect(houseX, groundY, houseW, bh);
     ctx.setLineDash([]);
+    // Small egress windows near the top
+    const wins = 3, winW = 34, winH = 20;
+    const gap = (houseW - wins * winW) / (wins + 1);
+    for (let wi = 0; wi < wins; wi++) {
+      const wx = houseX + gap + wi * (winW + gap);
+      const wy = groundY + 8;
+      ctx.strokeRect(wx, wy, winW, winH);
+      ctx.beginPath();
+      ctx.moveTo(wx + winW / 2, wy);
+      ctx.lineTo(wx + winW / 2, wy + winH);
+      ctx.stroke();
+    }
     ctx.fillStyle = COLORS.textDim;
-    ctx.font = '14px ui-monospace, monospace';
+    ctx.font = 'bold 16px ui-monospace, monospace';
     ctx.textAlign = 'center';
-    ctx.fillText('BASEMENT', houseX + houseW / 2, groundY + 20);
+    ctx.fillText('BASEMENT', houseX + houseW / 2, groundY + bh - 12);
   }
 
   // Setback dimension line (property edge to house)

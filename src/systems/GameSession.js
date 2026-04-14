@@ -37,6 +37,7 @@ export class GameSession {
     this.cardIndex++;
     this.activeBlueprint = generateBlueprint(this.wave, this.cardIndex);
     this.activeBlueprint.seed = this.seed;
+    if (typeof window !== 'undefined') window.__debugBp = this.activeBlueprint;
     this.timerMax = this.currentTimerMax();
     this.timer = this.timerMax;
     this.cardStart = performance.now();

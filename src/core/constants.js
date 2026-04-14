@@ -1,4 +1,4 @@
-export const VERSION = 'v0.1.1';
+export const VERSION = 'v0.1.2';
 
 export const CANVAS_W = 1080;
 export const CANVAS_H = 1920;
@@ -29,7 +29,7 @@ export const CONFIG = {
   INITIAL_TIMER: 8.0,
   MIN_TIMER: 3.0,
   TIMER_REDUCTION_PER_WAVE: 0.5,
-  INVALID_RATIO: 0.55,
+  INVALID_RATIO: 0.5,
   STAMPS_PER_WAVE: 5,
   COMBO_MAX: 8,
   SPEED_BONUS_THRESHOLD: 2.0,

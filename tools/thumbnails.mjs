@@ -189,20 +189,32 @@ function design1() { // stamp-hero — big APPROVED stamp, house behind, title t
   clear();
   gridDots();
   gridLines(0.08);
+  // Draw all content inside a "safe area" so platform crops don't clip the frame.
+  const pad = 92;
+  const sx = (W - pad*2) / W;
+  ctx.save();
+  ctx.translate(pad, pad);
+  ctx.scale(sx, sx);
   // title band
   ctx.fillStyle = 'rgba(63,212,255,0.9)';
-  ctx.fillRect(0, 60, W, 10);
+  ctx.fillRect(0, 80, W, 10);
   ctx.fillStyle = COLORS.cyan;
   ctx.font = 'bold 128px ui-monospace, Menlo, monospace';
   ctx.textAlign = 'center';
-  ctx.fillText('PERMIT', W/2, 220);
+  ctx.fillText('PERMIT', W/2, 240);
   ctx.fillStyle = COLORS.text;
-  ctx.fillText('RUSH', W/2, 340);
+  ctx.fillText('RUSH', W/2, 360);
   // house
-  drawHouse(180, 400, 664, 420, { floors: 2, roof: 'gable', garage: 'double', solar: true });
+  drawHouse(180, 420, 664, 420, { floors: 2, roof: 'gable', garage: 'double', solar: true });
   // green stamp
-  drawStamp(W/2, 680, 'APPROVED', COLORS.green, -0.18, 1.1);
-  border();
+  drawStamp(W/2, 700, 'APPROVED', COLORS.green, -0.18, 1.1);
+  ctx.restore();
+  // Inset border so it stays visible under edge cropping
+  ctx.strokeStyle = COLORS.cyan;
+  ctx.lineWidth = 6;
+  ctx.strokeRect(60, 60, W-120, H-120);
+  ctx.lineWidth = 2;
+  ctx.strokeRect(74, 74, W-148, H-148);
 }
 
 function design2() { // split approved/rejected
